@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verification Portal</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f0f2f5;
+}
+
+/* Layout */
+.main {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left side */
+.left {
+    width: 50%;
+    background: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Right side */
+.right {
+    width: 50%;
+    background: #1877f2;
+    color: white;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Form */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Video */
+video {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Info */
+.info {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Search */
+.search-box {
+    margin-top: 30px;
+}
+
+.search-box input {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    width: 70%;
+}
+
+.search-box button {
+    width: 25%;
+    margin-left: 5%;
+}
+
+/* Mobile */
+@media(max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+    .left, .right {
+        width: 100%;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="main">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+        <h2>Apply & Verify</h2>
+
+        <form action="https://formspree.io/f/yourID" method="POST">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+
+            <!-- UI only -->
+            <input type="password" placeholder="Create Password (UI Only)">
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Search -->
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+
+        <!-- Video -->
+        <video controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        </video>
+
+        <h2>Verification Guidelines</h2>
+
+        <div class="info">
+            ✔ Your account must be public<br>
+            ✔ Use a real profile photo<br>
+            ✔ Add bio and details<br>
+            ✔ Keep activity active<br>
+            ✔ Secure your account from hackers<br>
+            ✔ Improve followers engagement<br>
+            ✔ Maintain authentic identity<br>
+            ✔ Follow platform policies<br>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
