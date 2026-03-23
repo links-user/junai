@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Form</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 12px;
+    width: 300px;
+    backdrop-filter: blur(10px);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 6px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #00c6ff;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0072ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left">
+        <h1>Apply Now</h1>
+        <p>Fill your details and submit safely.</p>
+    </div>
+
+    <div class="right">
+
+        <!-- FormSpark Form -->
+        <form action="https://submit-form.com/YOUR-FORMSPARK-ID" method="POST" onsubmit="return validateForm()">
+            
+            <h2>Registration</h2>
+
+            <input type="text" id="name" name="name" placeholder="Enter Name" required>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+            <!-- Optional redirect -->
+            <input type="hidden" name="_redirect" value="https://your-site.com/thank-you.html">
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    if(name.length < 3){
+        alert("Name must be at least 3 characters");
+        return false;
+    }
+
+    if(!email.includes("@")){
+        alert("Enter valid email");
+        return false;
+    }
+
+    if(password.length < 4){
+        alert("Password must be at least 4 characters");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</body>
+</html>
